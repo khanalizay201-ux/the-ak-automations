@@ -9,16 +9,24 @@ export default function Navbar() {
         color: "white",
         position: "sticky",
         top: 0,
+        zIndex: 1000,
       }}
     >
-      <h2>AK Automations</h2>
+      <h2 style={{ color: "#38bdf8" }}>AK Automations</h2>
 
       <div style={{ display: "flex", gap: "20px" }}>
-        <a href="#home" style={{ color: "white" }}>Home</a>
-        <a href="#about" style={{ color: "white" }}>About</a>
-        <a href="#services" style={{ color: "white" }}>Services</a>
-        <a href="#projects" style={{ color: "white" }}>Projects</a>
-        <a href="#contact" style={{ color: "white" }}>Contact</a>
+        {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
+          <a
+            key={item}
+            href="#"
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+          >
+            {item}
+          </a>
+        ))}
       </div>
     </nav>
   );
